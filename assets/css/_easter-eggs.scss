@@ -1,0 +1,41 @@
+$duration: 180s;
+$delay: 0s;
+
+.easter-egg-death-star {
+  position: fixed;
+  width: 15%;
+  aspect-ratio: 1 / 1;
+  background: red;
+  right: 5%;
+  top: 5%;
+  background: url('./assets/images/death-star.png');
+  background-size: contain;
+
+  // As the death star is round, we can cut off
+  // artifacts (creators signature.. *cough*) around
+  // it by rounding the image
+  border-radius: 50%;
+
+  // Prepare animation state
+  transform: scale(0);
+  filter: brightness(0);
+
+  animation: creep-up ease-in-out $duration;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+}
+
+@keyframes creep-up {
+  0% {
+    transform: scale(0);
+    filter: brightness(0);
+    top: -5%;
+    right: 0;
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+    top: 7%;
+    right: 7%;
+  }
+}

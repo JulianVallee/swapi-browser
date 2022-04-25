@@ -1,0 +1,30 @@
+
+@mixin debugDrawLine($orientation: 'vertical', $position: 50%) {
+  @if $orientation == 'vertical' {
+    &:before {
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: $position;
+    }
+
+  } @else {
+    &:after {
+      width: 100%;
+      height: 1px;
+      top: $position;
+      left: 0;
+    }
+  }
+
+  &:after, &:before {
+    content: "";
+    position: absolute;
+    background: red;
+  }
+}
+
+@mixin debugDrawCross() {
+  @include debugDrawLine('vertical');
+  @include debugDrawLine('horizontal');
+}

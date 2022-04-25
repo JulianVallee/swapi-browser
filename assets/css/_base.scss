@@ -1,0 +1,188 @@
+// TODO: Refactor to @use because @import is considered deprecated-ish
+
+@use './assets/css/mixins';
+@import './assets/css/fonts';
+@import './assets/css/settings';
+@import './assets/css/reset';
+@import './assets/css/transitions';
+@import './assets/css/easter-eggs';
+
+a {
+  color: $color-yellow;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    color: darken($color-yellow, 25%);
+  }
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: $tile-background-color;
+  color: $color-white;
+
+  &:hover {
+    background: lighten($color-black, 10%);
+  }
+}
+
+/**
+ * Background image is separate element so we can
+ fake blur the background in firefox using -moz-element.
+ */
+#background {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  background: url('./assets/images/starfield.webp') fixed center;
+  background-size: contain;
+}
+
+/**
+ * Prevent content shifting when changing between
+ * routes with and without a vertical scrollbar
+ */
+html {
+  scrollbar-gutter: stable;
+}
+
+/**
+ * Full width page background shadow layers
+ */
+body {
+  &:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(-180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 100%);
+    pointer-events: none;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 100%);
+    pointer-events: none;
+  }
+}
+
+/**
+ * Content container
+ */
+.container {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  display: grid;
+  grid-gap: 2rem;
+  margin: $margin auto;
+  padding: 0;
+
+  transition: all 0.3s;
+
+  @include mixins.media($mq-sm) {
+    padding: 1rem 2rem;
+  }
+
+  @include mixins.media($mq-md) {
+    padding: 2rem 4rem;
+  }
+
+  &--glass {
+    border: $border;
+    border-radius: $border-radius;
+    background-color: transparentize(#fff, 0.9);
+    @include mixins.blur(4px);
+  }
+
+  &--sm {
+    max-width: 50%;
+  }
+
+  &--md {
+    max-width: 75%;
+  }
+
+  &--l {
+    max-width: 100%;
+  }
+}
+
+.back-link {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 3rem;
+  z-index: 1;
+
+  a {
+    display: inline-block;
+    padding: .5rem 1rem;
+    background: $tile-background-color;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @include mixins.notchHeight(3px);
+  @include mixins.notchColor($color-yellow);
+}
+
+/**************
+ * Typography *
+ **************/
+body, p, button, input {
+  font-family: $font-din;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-starjedi;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+h1 {
+  font-size: 4.242rem;
+  line-height: 4.5rem;
+}
+h2 {
+  font-size: 2.828rem;
+  line-height: 3rem;
+}
+h3 {
+  font-size: 1.414rem;
+}
+h4 {
+  font-size: 0.707rem;
+}
+h5 {
+  font-size: 0.4713333333333333rem;
+}
+h6 {
+  font-size: 0.3535rem;
+}

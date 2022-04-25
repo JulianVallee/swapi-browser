@@ -1,0 +1,34 @@
+@mixin notchColor($color) {
+  .notch {
+    &:before, &:after {
+      border-top-color: $color;
+      border-bottom-color: $color;
+    }
+  }
+}
+
+@mixin notchHoverColor($color) {
+  &:hover {
+    @include notchColor($color);
+  }
+}
+
+@mixin notchHeight($height) {
+  .notch {
+    height: $height;
+
+    &:before, &:after {
+      border-top-width: $height;
+      border-bottom-width: $height;
+    }
+  }
+}
+
+@mixin notchWidth($width) {
+  .notch.notch--bottom {
+    &:before {
+      width: $width;
+    }
+  }
+
+}

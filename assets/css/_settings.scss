@@ -1,0 +1,58 @@
+/**
+ * Colors
+ */
+$color-primary: #888;
+$color-white: #fff;
+$color-black: #000;
+$color-yellow: #ffe81f;
+$color-yellow-2: #fff9b0;
+$color-yellow-light: #fffbe8;
+
+/**
+ * Paddings, margins, borders etc.
+ */
+$margin: 2rem;
+$padding: 1rem;
+$border: solid 1px transparentize($color-white, 0.6);
+$border-radius: 5px;
+
+/**
+ * Font-sets
+ */
+$font-starjedi: Starjedi, Helvetica, Arial, sans-serif;
+$font-starjedih: Starjhol, Helvetica, Arial, sans-serif;
+$font-din: DIN, Helvetica, Arial, sans-serif;
+
+/**
+ * Media Queries
+ */
+$mq-sm: 480px;
+$mq-md: 800px;
+$mq-lg: 1260px;
+$mq-xl: 1700px;
+
+/**
+ * Component `SbTile`
+ */
+$tile-background-color: transparentize(#1a1a1a, 0.1);
+
+/**
+ * Mixin `glow`
+ */
+$color-glow-1: #ffffff;
+$color-glow-2: #fffbe8;
+$color-glow-3: #fffbe8;
+$color-glow-4: #ffe81f;
+
+/**
+ * Native CSS variables
+ *
+ * Currently only used to pass media query values to JS,
+ * but would be nice to setup for easier theme-ing
+ */
+:root {
+  --mq-sm: #{$mq-sm};
+  --mq-md: #{$mq-md};
+  --mq-lg: #{$mq-lg};
+  --mq-xl: #{$mq-xl};
+}

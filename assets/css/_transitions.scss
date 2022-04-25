@@ -1,0 +1,41 @@
+/**
+ * Default page transition
+ */
+.page {
+  &-enter-active,
+  &-leave-active {
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  &-leave-from,
+  &-enter-to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/**
+ * Fade out-in
+ */
+.fade {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.3s;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-leave-from,
+  &-enter-to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,19 @@
+/**
+ * The font-face URLs are relative to the css file.
+ * Since we import this file in `base.scss -> app.vue`
+ * the URLs must be relative to `app.vue`.
+ */
+@font-face {
+  font-family: "Starjedi";
+  src: url("./assets/fonts/star_jedi/starjedi/Starjedi.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Starjhol";
+  src: url("./assets/fonts/star_jedi/starjedi/Starjhol.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DIN";
+  src: url("./assets/fonts/din/DINRegular.ttf") format("truetype");
+}

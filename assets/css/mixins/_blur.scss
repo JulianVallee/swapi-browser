@@ -1,0 +1,18 @@
+@mixin blur($amount: 4px) {
+  backdrop-filter: blur($amount);
+
+  // Blur fallback for firefox, without enabling experimental flags
+  &::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+
+    background-attachment: fixed;
+    background-image: -moz-element(#background);
+    content: "";
+    filter: blur($amount);
+  }
+}

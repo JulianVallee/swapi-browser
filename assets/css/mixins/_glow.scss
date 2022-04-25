@@ -1,0 +1,13 @@
+@use './../settings';
+
+@mixin glow($strength: 1) {
+  @if $strength < 0 or $strength > 2 {
+    @error "$strength: Expected #{$strength} to be within 0 and 2.";
+  }
+
+  filter:
+          drop-shadow(0 0 1px transparentize(settings.$color-glow-1, 0))
+          drop-shadow(0 0 0.5rem transparentize(settings.$color-glow-2, 0.1 * $strength))
+          drop-shadow(0 0 1rem transparentize(settings.$color-glow-3, 0.5 * $strength))
+          drop-shadow(0 0 1.5rem transparentize(settings.$color-glow-4, 0.5 * $strength));
+}
