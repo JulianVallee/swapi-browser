@@ -122,7 +122,7 @@ $tileTransitionDuration: 0.1s;
   &__background-image {
     position: absolute;
     bottom: 0;
-    right: -25%;
+    right: 0;
     max-width: 75%;
     max-height: 75%;
     z-index: 0;

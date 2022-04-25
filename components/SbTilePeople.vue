@@ -57,7 +57,7 @@ export default defineComponent({
       return this.loaded ? extractIdFromResourceUri(this.tileData.homeworld) : '';
     },
     dynamicTileImage() {
-      return `./images/people/${this.tileData.name.replaceAll(' ', '-')}.png`;
+      return `./images/people/${this.tileData.name.replaceAll(' ', '-')}.webp`;
     }
   }
 });

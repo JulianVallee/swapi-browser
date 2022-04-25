@@ -18,7 +18,7 @@
 
     <transition name="fade">
       <SbTile aspect-ratio="auto" v-if="!filteredPeoples.length" class="message">
-        <img src="@/public/images/people/yoda.png" alt="Yoda" />
+        <img src="@/public/images/people/yoda.webp" alt="Yoda" />
 
         <blockquote>
             <span v-for="line in emptyMessages[0]">
