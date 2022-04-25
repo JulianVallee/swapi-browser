@@ -13,7 +13,7 @@ There is a [demo](https://master--sparkly-valkyrie-c4b960.netlify.app/) that aut
 increasing page load times and reduces traffic sent. (Note: Cache expiration is not implemented yet. Clear localstorage to fetch fresh data on the next page refresh.)
 - Star Wars themed responsive UI with animations, advanced control shortcuts and an app-like look-and-feel.
 - Enhances the API data with a few manually collected images. These images should normally not be stored within a repository, but for the purposes of this project it doesn't really matter.
-- Generate TypeScript definitions from SWAPI schema files using `npm run generate-swapi-types`.
+- Generate TypeScript definitions from SWAPI schema files using `npm run generate-types:swapi`.
 
 ## Setup
 
@@ -35,7 +35,7 @@ Generate SWAPI typescript interfaces from their JSON schema.
 The definition file will be saved in the `/types` directory.  
 
 ```bash
-npm run generate-swapi-types
+npm run generate-types:swapi
 ```
 
 ## Production

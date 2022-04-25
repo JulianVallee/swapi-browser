@@ -6,17 +6,23 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate --verbose",
     "preview": "nuxt preview",
-    "generate-swapi-types": "npx ts-node --esm scripts/generate-swapi-types.ts"
+    "generate-types:swapi": "npx ts-node --esm scripts/generate-types-swapi.ts",
+    "images-processor:watch": "npx ts-node --esm scripts/image-processor-watch.ts",
+    "images-processor:test": "npx ts-node --esm -e 'require(\"scripts/image-processor.ts\").test()'"
   },
   "devDependencies": {
     "@types/json-schema": "^7.0.11",
+    "@types/sharp": "^0.30.2",
     "@typescript-eslint/parser": "^5.20.0",
     "axios": "^0.26.1",
+    "chokidar": "^3.5.3",
     "eslint": "^8.13.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "json-schema-to-typescript": "^10.1.5",
     "nuxt": "3.0.0-rc.1",
     "sass": "^1.50.1",
+    "sharp": "^0.30.4",
+    "tsconfig-paths": "^3.14.1",
     "typescript": "^4.6.3",
     "vue-eslint-parser": "^8.3.0"
   }
